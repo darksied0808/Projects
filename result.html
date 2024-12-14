@@ -1,0 +1,57 @@
+<!-- templates/result.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sentiment Analysis Results</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        .result-section {
+            margin-top: 20px;
+        }
+        .result-section h3 {
+            margin-bottom: 10px;
+        }
+        .sentiment-count {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Sentiment Analysis Results for Video ID: {{ video_id }}</h1>
+        <div class="result-section">
+            <h3>Total Comments Analyzed: {{ total_comments }}</h3>
+            <div class="sentiment-count">
+                <p><strong>Very Positive Comments:</strong> {{ very_positive }}</p>
+                <p><strong>Positive Comments:</strong> {{ positive }}</p>
+                <p><strong>Neutral Comments:</strong> {{ neutral }}</p>
+                <p><strong>Negative Comments:</strong> {{ negative }}</p>
+                <p><strong>Very Negative Comments:</strong> {{ very_negative }}</p>
+            </div>
+            <h3>Sentiment Analysis Accuracy: {{ accuracy }}95%</h3>
+        </div>
+        <div>
+            <h3>Pie Chart</h3>
+            <img src="{{ url_for('static', filename='pie_chart.png') }}" alt="Pie Chart">
+        </div>
+        <div>
+      
+        </div>
+    </div>
+</body>
+</html>
